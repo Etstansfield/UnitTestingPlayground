@@ -84,5 +84,47 @@ namespace UnitTestingPlayground.Test
 
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData(8, 4, 32)]
+        [InlineData(3, 2, 6)]
+        public void Multiply_SimpleTest(double x, double y, double expected)
+        {
+            // arrange
+            // act
+            double actual = Calculator.Multiply(x, y);
+            // assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Multiply_MaxTest()
+        {
+            // arrange
+            double x = double.MaxValue;
+            double y = double.MaxValue;
+            double expected = double.PositiveInfinity;
+            // act
+
+            double actual = Calculator.Multiply(x, y);
+            // assert
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Multiply_MinTest()
+        {
+            // arrange
+            double x = double.MinValue;
+            double y = double.MinValue;
+            double expected = double.PositiveInfinity;
+            // act
+
+            double actual = Calculator.Multiply(x, y);
+            // assert
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
