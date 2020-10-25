@@ -6,7 +6,8 @@ namespace UnitTestingPlayground
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Calculator.Subtract(double.MaxValue, double.MaxValue));
+            Person test = new Person { FirstName = "Ed", LastName = "Big Dolla" };
+            DummyCsv.AddPerson(test);
         }
     }
 }
